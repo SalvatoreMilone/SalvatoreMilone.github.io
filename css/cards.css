@@ -1,0 +1,333 @@
+
+.card{
+    position: relative;
+    min-width: 150px;
+    min-height: 150px;
+}
+
+/* photo card */
+
+.card.photo{
+    grid-area: photo;
+    background-color: var(--mygray);
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    margin: 0 .5rem .5rem 0;
+    border-radius: 1rem;
+}
+.card.photo::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    background-color: var(--myred);
+    left: 0;
+    top: 0;
+    border-radius: 1rem 1rem 0 0;
+    transition: all 350ms ease-in-out;
+
+}
+.card.photo:hover::before, .card.photo:active:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--myred);
+    left: 0;
+    top: 0;
+    border-radius: 1rem;
+}
+.card.photo::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    background-image: url(../img/sm.png);
+    background-position:bottom;
+    background-size: 140%;
+    background-repeat: no-repeat;
+    border-radius: 0 0 1rem 1rem;
+    bottom: 0;
+    transition: all 350ms ease-in-out;
+}
+.card.photo:hover::after{
+    width: 100%;
+    height: 150%;
+    background-image: url(../img/sm.png);
+    background-size: 155%;
+}
+
+/* //photo card */
+
+/* about card */
+
+.card.about{
+    grid-area: about;
+    background-color: var(--mygray);
+    grid-column: 2 / 2;
+    grid-row: 1 / 3;
+    margin: 0 0 1rem .5rem;
+    border-radius: 1rem;
+    transition: all 500ms ease-in-out;
+
+}
+.card.about::before{
+    content: "关于我";
+    position: absolute;
+    width: calc(2rem - 5px);
+    height: calc(100% - 10px);
+    background-color: var(--myred);
+    right: 0;       
+    top: 0;
+    border-radius: 0 1rem 1rem 0;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    font-weight: 900;
+    letter-spacing: .3rem;
+    transition: all 350ms ease-in-out;
+}
+
+.card.about:hover:before, .card.about:active:before{
+    content: "关于我";
+    position: absolute;
+    width: calc(100% - .5rem);
+    height: calc(100% - 10px);
+    background-color: var(--myred);
+    right: 0;       
+    top: 0;
+    border-radius: 1rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: .3rem;
+    z-index: -1;
+}
+.card.about:hover div , .card.about:active div{
+    color: var(--mygray);
+}
+.card.about:hover svg , .card.about:active svg{
+    stroke: var(--mygray);
+}
+.card.about:hover , .card.about:active{
+    background-color: transparent;
+}
+.card.about div{
+    color: var(--myred);
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    margin: 10px 10px 0 13px;
+}
+
+.card.about div:nth-child(2)::after{
+    content: ".";
+    position: absolute;
+    font-size: 4rem;
+    line-height: 3rem;
+}
+
+.card.about svg{
+    width: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-80%);
+    stroke: var(--myred);
+}
+
+/* //about card */
+/* projects card */
+.card.projects{
+    grid-area: projects;
+    background-color: var(--mygray);
+    grid-column: 1 / 1;
+    grid-row: 2 / 2;
+    margin: .5rem .5rem 0 0;
+    border-radius: 1rem 1rem 0 0;
+    transition: all 500ms ease-in-out;
+}
+
+.card.projects::after{
+    content: "";
+    background-color: transparent;
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 0 2rem;
+    box-shadow: -10px 10px 0 0 var(--mygray);
+    right: -4rem;
+    bottom: 0;
+    z-index: -1;
+}
+.card.projects2{
+    grid-area: projects;
+    background-color: var(--mygray);
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    margin: 0 0 .5rem 0;
+    border-radius: 0 1rem 1rem 1rem;
+    position: relative;
+    transition: all 500ms ease-in-out;
+}
+.card.projects2::before{
+    content: "项目";
+    position: absolute;
+    width: calc(100% - 10px);
+    height: 2rem;
+    background-color: var(--myred);
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: .3rem;
+    transition: all 350ms ease-in-out;
+    z-index: 3;
+}
+.card.card.projects2:hover::before, .card.card.projects2:active::before{
+    content: "项目";
+    position: absolute;
+    width: calc(100% - 10px);
+    height: 65%;
+    background-color: var(--myred);
+    left: 0;
+    bottom: 0;
+    border-radius:1rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: .3rem;
+    transition: all 350ms ease-in-out;
+}
+
+.card.projects div:first-child{
+    color: var(--myred);
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    margin: 10px 10px 0 13px;
+}
+.card.projects span{
+    color: var(--myred);
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 10px;
+}
+.card.projects div{
+    color: var(--myred);
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: .2rem;
+    margin: 10px 10px 0 13px;
+    line-height: 1.5rem;
+}
+.pc{
+    position: absolute;
+    width: 90%;
+    top: -3.2rem;
+    left: 1.6rem;
+    fill: var(--myred);
+    stroke: var(--myred);
+}
+
+.p2-endtag{
+    display: none;
+}
+/* //projects card */
+/* contacts card */
+
+.card.contacts{
+    grid-area: contacts;
+    background-color: var(--mygray);
+    grid-column: 1 / 3;
+    grid-row: 4 / 4;
+    margin: .5rem 0 0 0;
+    border-radius: 1rem;
+    position: relative;
+    transition: all 500ms ease-in-out;
+
+}
+.card.contacts::before{
+    content: "联系人";
+    position: absolute;
+    width: calc(2rem - 5px);
+    height: calc(100% - 10px);
+    background-color: var(--myred);
+    left: 0;       
+    top: 0;
+    border-radius: 1rem 0 0 1rem;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    font-weight: 900;
+    letter-spacing: .3rem;
+    transition: all 350ms ease-in-out;
+    color: black;
+}
+.card.contacts div{
+    padding-left: 2.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--myred);
+    letter-spacing: .2rem;
+}
+.mail-img{
+    width: 270px;
+    position: absolute;
+    right: 2rem;
+    bottom: 1rem;
+}
+
+.mail-img2{
+    display: none;
+}
+
+.mail-img2-trace{
+    display: none;
+}
+
+.card.contacts:hover{
+    background: transparent;
+}
+.card.contacts{
+    color: var(--myred);
+    fill: var(--myred);
+    stroke: var(--myred);
+}
+.card.contacts:hover div{
+    color: var(--mygray);
+    fill: var(--mygray)!important;
+    stroke: var(--mygray)!important;
+}
+.card.contacts:hover::before, .card.contacts:active::before{
+    transition: all 350ms ease-in-out;
+    width: 100%;
+    z-index: -1;
+    border-radius: 1rem;
+}
+/* //contacts card */
+
+.card::before{
+    box-shadow: inset 0px 0px 7px 1px rgba(0, 0, 0, .3);
+}

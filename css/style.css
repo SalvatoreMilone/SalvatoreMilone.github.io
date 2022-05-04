@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Work+Sans:wght@100;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+* img{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+:root{
+    --myred: #c01800;
+    --mygray: #d0d0d0;
+}
+
+body{
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAAHeEJUAAAAACXBIWXMAAAsSAAALEgHS3X78AAABZ0lEQVQ4ja2VwVnCQBCF/2wD0gGfl90jWIFSgelArECtQKxA7CBUoCVgBcpxTsQOsIL4TdyFkGwg8OVd2My+ednZN0MoigJrbaa/ibV2BjwDJBpxzhX60KD9R+HJ+AUiMt/P2W0kmvIIvLKP+zJD4Zy78exl9fUD4ANIRWSjMt/AqCKyMrWAYmSIQIOLWvitLM2XNwvr6rFyYBhRW4nIuHlTBxBuQgu8PkYGXk5SNmFRVtWi6Pd3Bfoip8DUP2YikoW9cASt9KtF9VJEcuPNaiMp1qWitXYDXByp6cd0ICmGUbNjOIm46sD77ORQ3Z1WEhFnBsEZHbBqwh6xQtYJfjhy7l9AxeY6VVFRb/myowexF4y1LQjX7pyb+fY4RxCft/bNWrZRCryfKRbDlamMQV9IVTTvWbS806wD7xRkRkT0/3XSk+BEO6De0HrquzPEFiKy9abR/F5cvyH6obk9JKRDEnpzC+APA8G8VzUK10sAAAAASUVORK5CYII='), default;
+}
+
+header{
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-weight: 900;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header span{
+    color: var(--myred);
+    font-size: 2rem;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* cursor */
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(to top left, var(--myred), #ff5623);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 10;
+    transition: all 200ms linear;
+}
+
+.card:hover ~ .circle{
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -20px 0 0 -20px;
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+    z-index: 10;
+    transition: all 200ms linear;
+    backdrop-filter: blur(3px);
+}
+
+/* //cursor */
+
+.grid-container{
+    display: grid;
+    width: min-content;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: fit-content;
+    margin-top: 4rem;
+}
+
+
+/* my btn */
+
+.sm-btn{
+    background-color: #c01901;
+    border: none;
+    color: white;
+    font-size: bold;
+    border-radius: 50px;
+    box-shadow: 5px 4px 14px #cbcbcb,-5px -5px 10px #eeeeee;
+    margin: .5rem;
+    transition: all 250ms ease-in-out;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+}
+
+.sm-btn:hover,.sm-btn:focus {
+    background-color: #c01901;
+    box-shadow: 5px 4px 14px #eeeeee,-5px -5px 10px #e6e6e6;
+}
+
+.sm_button_circle{
+    background-color: red;
+    border-radius: 1000px;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 0px;
+    height: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    pointer-events: none;
+    /*animation-timing-function: ease-in-out; */
+}
+
+.button_sm_inner{
+    display: inline-block;
+    color: #F4F4F4;
+    font-weight: normal;
+    text-align: center;
+    transition: 400ms;
+    text-decoration: none;
+    z-index: 100000;
+    padding: 20px 25px;
+}
+
+.button_text_container{
+   position:relative;
+   z-index: 10000;
+}
+
+.explode-circle {
+    animation: explode 0.5s forwards;
+ 
+ }
+ 
+.desplode-circle{
+    animation: desplode 0.5s forwards;
+}
+
+@keyframes explode {
+    0% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: rgba(42, 53, 80,0.2);
+    }
+    100% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(62, 62, 62, 0.8);
+    }
+}
+
+@keyframes desplode {
+    0% {
+        width: 400px;
+        height: 400px;
+        margin-left: -200px;
+        margin-top: -200px;
+        background-color: rgba(62, 62, 62, 0.8);
+    }
+    100% {
+        width: 0px;
+        height: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        background-color: rgba(42, 53, 80,0.2);
+    }
+}
