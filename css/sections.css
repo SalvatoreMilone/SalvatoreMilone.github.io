@@ -51,6 +51,9 @@ section{
 
 .button_container{
     margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .abt-sec-title{
@@ -87,6 +90,8 @@ section{
 
 .projects-section{
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .projects-section video{
@@ -112,12 +117,7 @@ section{
 }
 
 @media (min-width: 900px) {
-    .projects-section{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
+
     .projects-section video{
         height: 100%;
     }
