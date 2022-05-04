@@ -1,8 +1,8 @@
 @media (max-height: 750px) {
     .card{
         position: relative;
-        min-width: 200px !important;
-        min-height: 200px !important;
+        min-width: 150px !important;
+        min-height: 150px !important;
     }
 }
 @media (min-width: 900px) {
